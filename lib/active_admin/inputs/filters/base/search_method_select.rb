@@ -40,10 +40,10 @@ module ActiveAdmin
             input_wrapping do
               [
                 label_html, # your label
-                "<div>",
+                '<div class="filter-input-group">',
                 select_html, # the dropdown that holds the available search methods
                 input_html, # your input field
-                "</div>"
+                '</div>'
               ].join("\n").html_safe
             end
           end
