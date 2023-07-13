@@ -84,7 +84,7 @@ module ActiveAdmin
 
     include Comparable
 
-    attr_reader :block, :title, :sym
+    attr_reader :block, :title, :sym, :partial, :link_html_options
 
     DEFAULT_CONFIRM_MESSAGE = proc { I18n.t "active_admin.batch_actions.default_confirmation" }
 
@@ -119,6 +119,8 @@ module ActiveAdmin
       @options = options
       @block = block
       @confirm = options[:confirm]
+      @partial = options[:partial]
+      @link_html_options = options[:link_html_options] || {}
       @block ||= proc {}
     end
 

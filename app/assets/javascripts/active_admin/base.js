@@ -84,17 +84,8 @@
   var onDOMReady$2 = function onDOMReady() {
     $(".batch_actions_selector li a").off("click confirm:complete");
     $(".batch_actions_selector li a").on("click", function(event) {
-      var _this = this;
-      var message;
       event.stopPropagation();
       event.preventDefault();
-      if (message = $(this).data("confirm")) {
-        ModalDialog(message, $(this).data("inputs"), function(inputs) {
-          $(_this).trigger("confirm:complete", inputs);
-        });
-      } else {
-        $(this).trigger("confirm:complete");
-      }
     });
     $(".batch_actions_selector li a").on("confirm:complete", function(event, inputs) {
       var val;

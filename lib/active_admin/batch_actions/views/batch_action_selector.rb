@@ -36,7 +36,7 @@ module ActiveAdmin
               "data-action": batch_action.sym,
               "data-confirm": confirmation_text,
               "data-inputs": render_in_context(self, batch_action.inputs).to_json
-            }
+              }.reverse_merge(batch_action.link_html_options)
 
             default_title = render_or_call_method_or_proc_on(self, batch_action.title)
             title = I18n.t("active_admin.batch_actions.labels.#{batch_action.sym}", default: default_title)

@@ -13,13 +13,13 @@ const onDOMReady = function() {
     let message;
     event.stopPropagation(); // prevent Rails UJS click event
     event.preventDefault();
-    if ((message = $(this).data('confirm'))) {
-      ModalDialog(message, $(this).data('inputs'), inputs => {
-        $(this).trigger('confirm:complete', inputs);
-      });
-    } else {
-      $(this).trigger('confirm:complete');
-    }
+    // if ((message = $(this).data('confirm'))) {
+    //   ModalDialog(message, $(this).data('inputs'), inputs => {
+    //     $(this).trigger('confirm:complete', inputs);
+    //   });
+    // } else {
+    //   $(this).trigger('confirm:complete');
+    // }
   });
 
   $('.batch_actions_selector li a').on('confirm:complete', function(event, inputs){
